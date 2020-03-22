@@ -61,6 +61,25 @@ Controle de produtos.
 - estoque;
 - estoque_minimo;
 
+## 3. Estoque
+
+Controle de estoque.
+
+### Modelo:
+
+* Estoque:
+
+- funcionario;
+- nf;
+- movimento;
+
+* Estoque Itens:
+
+- estoque;
+- produto;
+- quantidade;
+- saldo;
+
 # Links
 
 * [python-decouple](https://github.com/henriquebastos/python-decouple)
