@@ -35,3 +35,5 @@ python manage.py migrate
 
 # Links
 
+* [python-decouple](https://github.com/henriquebastos/python-decouple)
+* [How to Use Python Decouple](https://simpleisbetterthancomplex.com/2015/11/26/package-of-the-week-python-decouple.html)
