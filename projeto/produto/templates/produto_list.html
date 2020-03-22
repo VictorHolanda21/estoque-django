@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<div class="container">
+		<class class="page-header">
+			<h2><i class="fa fa-cube"></i> Lista de Produtos</h2>
+			<hr>
+		</class>
+
+		{% if object_list %}
+			<table class="table table-striped">
+				<thead>
+					<th>Importado</th>
+					<th>NCM</th>
+					<th>Produto</th>
+					<th>Preço</th>
+					<th class="text-center">Estoque</th>
+					<th class="text-center">Estoque mínimo</th>
+				</thead>
+				<tbody>
+					{% for object in object_list%}
+						<tr>
+							<td>
+								{% if object.importado%}
+									<i class="fa fa-check-circle estoque-ok"></i>
+								{% else %}									
+									<i class="fa fa-minus-circle estoque-nok"></i>
+								{% endif%}
+							</td>
+							<td>{{ object.ncm}}</td>
+							<td><a href="#">{{ object.produto}}</a></td>
+							<td>R$ {{ object.preco}}</td>
+							<td class="text-center">{{ object.estoque}}</td>
+							<td class="text-center">{{ object.estoque_minimo}}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+				
+			</table>
+		{% else %}
+			<p class="alert alert-warning">Lista Vazia.</p>
+		{% endif %}
+	</div>
+
+{% endblock content %}
