@@ -33,6 +33,34 @@ python contrib/env_gen.py
 python manage.py migrate
 ```
 
+# Apps no Projeto
+
+## 1. Core
+
+Conteúdo generico para todo o projeto.
+
+### Modelo:
+
+* TimeStampedModel:
+
+- created;
+- modified;
+
+## 2. Produto
+
+Controle de produtos.
+
+### Modelo:
+
+* Produto:
+
+- importado;
+- ncm;
+- produto;
+- preco;
+- estoque;
+- estoque_minimo;
+
 # Links
 
 * [python-decouple](https://github.com/henriquebastos/python-decouple)
