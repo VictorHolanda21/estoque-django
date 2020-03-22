@@ -29,7 +29,7 @@
 								{% endif%}
 							</td>
 							<td>{{ object.ncm}}</td>
-							<td><a href="#">{{ object.produto}}</a></td>
+							<td><a href="{{ object.get_absolute_url }}">{{ object.produto}}</a></td>
 							<td>R$ {{ object.preco}}</td>
 							<td class="text-center">{{ object.estoque}}</td>
 							<td class="text-center">{{ object.estoque_minimo}}</td>
