@@ -41,7 +41,7 @@ Conteúdo generico para todo o projeto.
 
 ### Modelo:
 
-* TimeStampedModel:
+**TimeStampedModel:**
 
 - created;
 - modified;
@@ -52,7 +52,7 @@ Controle de produtos.
 
 ### Modelo:
 
-* Produto:
+**Produto:**
 
 - importado;
 - ncm;
@@ -67,13 +67,13 @@ Controle de estoque.
 
 ### Modelo:
 
-* Estoque:
+**Estoque:**
 
 - funcionario;
 - nf;
 - movimento;
 
-* Estoque Itens:
+**Estoque Itens:**
 
 - estoque;
 - produto;
@@ -88,3 +88,6 @@ Controle de estoque.
 * [Bootstrap Template](https://getbootstrap.com/docs/4.0/getting-started/introduction/#starter-template)
 * [django-widget-tweaks](https://github.com/jazzband/django-widget-tweaks)
 * [Classy Class-Based Views](https://ccbv.co.uk/)
+* [form-inline](https://felipefrizzo.github.io/post/form-inline/)
+* [form-inline-cbv](https://felipefrizzo.github.io/post/form-inline-cbv/)
+* [django-bootstrap-form](https://django-bootstrap-form.readthedocs.io/en/latest/)
