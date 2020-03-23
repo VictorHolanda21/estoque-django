@@ -28,6 +28,35 @@ class Estoque(TimeStampedModel):
 	def get_absolute_url(self):
 		return reverse_lazy('estoque:estoque_entrada_detail', kwargs={'pk': self.pk})
 
+class EstoqueEntradaManager(models.Manager):
+
+	def get_queryset(self):
+		return super(EstoqueEntradaManager, self).get_queryset().filter(movimento='e')
+
+class EstoqueSaidaManager(models.Manager):
+
+	def get_queryset(self):
+		return super(EstoqueSaidaManager, self).get_queryset().filter(movimento='s')
+
+
+class EstoqueEntrada(Estoque):
+
+	objects = EstoqueEntradaManager()
+
+	class Meta:
+		proxy=True
+		verbose_name='estoque entrada'
+		verbose_name_plural='estoque entradas'
+
+class EstoqueSaida(Estoque):
+
+	objects = EstoqueSaidaManager()
+
+	class Meta:
+		proxy=True
+		verbose_name='estoque saida'
+		verbose_name_plural='estoque saidas'
+
 
 
 class EstoqueItens(models.Model):
