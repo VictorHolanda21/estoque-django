@@ -3,6 +3,7 @@ from django.db import models
 from django.urls import reverse_lazy
 from projeto.core.models import TimeStampedModel
 from projeto.produto.models import Produto
+from .managers import EstoqueEntradaManager, EstoqueSaidaManager
 
 # Create your models here.
 
@@ -27,17 +28,6 @@ class Estoque(TimeStampedModel):
 
 	def get_absolute_url(self):
 		return reverse_lazy('estoque:estoque_entrada_detail', kwargs={'pk': self.pk})
-
-class EstoqueEntradaManager(models.Manager):
-
-	def get_queryset(self):
-		return super(EstoqueEntradaManager, self).get_queryset().filter(movimento='e')
-
-class EstoqueSaidaManager(models.Manager):
-
-	def get_queryset(self):
-		return super(EstoqueSaidaManager, self).get_queryset().filter(movimento='s')
-
 
 class EstoqueEntrada(Estoque):
 
