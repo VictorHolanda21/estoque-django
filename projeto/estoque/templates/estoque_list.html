@@ -5,7 +5,7 @@
 	<div class="container">
 		<class class="page-header">
 			<h2>
-				<i class="fa fa-arrow-down estoque-nok"></i> Estoque de {{ titulo }}
+				<i class="fa fa-arrow-{% if 'Entrada' in titulo %}up{% else%}down{% endif %} estoque-{% if 'Entrada' in titulo %}ok{% else%}nok{% endif %}"></i> Estoque de {{ titulo }}
 				<span class="pull-right">
 					<a href="{% url url_add %}">
 						<button type="button" class="btn btn-primary"> <span class="fa fa-plus"></span>
