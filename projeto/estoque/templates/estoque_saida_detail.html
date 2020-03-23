@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<div class="container">
+		<class class="page-header">
+			
+			<h2>
+			<a href="{% url 'estoque:estoque_entrada_list' %}"><button type="button" class="btn btn-primary"> <span class="fa fa-arrow-left"></span>
+				</button></a>
+
+				{{ object }}
+				<span class="pull-right">
+					<a href="#">
+						<button type="button" class="btn btn-success"> <span class="fa fa-pencil"></span>
+							Editar
+						</button>
+					</a>
+				</span>
+			</h2>
+			<hr>
+		</class>
+
+		<div class="col-sm-6">
+			<table class="table table-user-information">
+				<tbody>
+					<tr>
+						<th class="text-right">
+							Movimento:
+						</th>
+						<td>
+							{% if 'e' in object.movimento %}
+								Entrada
+							{% else %}
+								Saída
+							{% endif %}
+						</td>
+					</tr>
+					<tr>
+						<th class="text-right">NF:</th>
+						<td>
+							{{object.nf_formated}}
+						</td>
+					</tr>
+					<tr>
+						<th class="text-right">Funcionário:</th>
+						<td>{{object.funcionario}}</td>
+					</tr>
+					<tr>
+						<th class="text-right">Data:</th>
+						<td>{{object.created}}</td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+
+		<div class="col-sm-12">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Produto</th>
+						<th class="text-center">Quantidade</th>
+						<th class="text-center">Saldo</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for obj in object.estoques.all %}
+						<tr>
+							<td>{{ obj.produto }}</td>
+							<td class="text-center">{{ obj.quantidade }}</td>
+							<td class="text-center">{{ obj.saldo }}</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+{% endblock content %}
