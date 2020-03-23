@@ -1,0 +1,7 @@
+.estoque-ok {color: green;}
+.estoque-nok {color: red;}
+
+span.required:after {
+	content: "*";
+	color: red;
+}
