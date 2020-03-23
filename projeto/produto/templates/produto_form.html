@@ -13,6 +13,19 @@
 
 {% block content %}
 	<div class="container">
+		<class class="page-header">
+			<h2>
+				<a href="{% url 'produto:produto_list' %}"><button type="button" class="btn btn-primary"> <span class="fa fa-arrow-left"></span>
+				</button></a>
+				{% if 'add/' in request.path %}
+				Adicionar Produto
+				{% else %}
+				Editar Produto
+				{% endif %}
+			</h2>
+
+			<hr>
+		</class>
 		
 		<form method="POST" novalidate>
 			{% csrf_token %}
