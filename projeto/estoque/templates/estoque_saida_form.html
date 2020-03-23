@@ -16,10 +16,10 @@
 	<div class="container">
 		<class class="page-header">
 			<h2>
-				<a href="{% url 'estoque:estoque_entrada_list' %}"><button type="button" class="btn btn-primary"> <span class="fa fa-arrow-left"></span>
+				<a href="{% url 'estoque:estoque_saida_list' %}"><button type="button" class="btn btn-primary"> <span class="fa fa-arrow-left"></span>
 				</button></a>
 				{% if 'add/' in request.path %}
-				Entrada estoque
+				Saída estoque
 				{% else %}
 				Editar estoque
 				{% endif %}
@@ -79,7 +79,7 @@
 							<i class="fa fa-floppy-o"></i>	
 							Salvar
 						</button>
-						<a class="btn btn-danger" href="{% url 'estoque:estoque_entrada_list' %}" style="margin-left: 2px;">
+						<a class="btn btn-danger" href="{% url 'estoque:estoque_saida_list' %}" style="margin-left: 2px;">
 							<i class="fa fa-times"></i>
 							Cancelar
 						</a>
@@ -151,7 +151,7 @@
 
 	$(document).on('change', '.clquantidade', function(){
 		quantidade = $(this).val();
-		saldo = Number(quantidade) + Number(estoque);
+		saldo = Number(estoque) - Number(quantidade);
 		campo = $(this).attr('id').replace('quantidade', 'saldo')
 		$('#'+campo).val(saldo)
 	});
