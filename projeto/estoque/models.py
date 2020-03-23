@@ -19,7 +19,11 @@ class Estoque(TimeStampedModel):
 		ordering = ('-created',)
 
 	def __str__(self):
-		return str(self.pk)
+		return '{} - {} - {}'.format(self.pk, str(self.nf).zfill(3), self.created.strftime('%d-%m-%Y'))
+
+	def nf_formated(self):
+		return str(self.nf).zfill(3)
+
 
 class EstoqueItens(models.Model):
 	estoque = models.ForeignKey(Estoque, on_delete=models.CASCADE)
@@ -28,7 +32,6 @@ class EstoqueItens(models.Model):
 	saldo = models.PositiveIntegerField()
 
 	class Meta:
-
 		ordering = ('pk',)
 
 	def __str__(self):
