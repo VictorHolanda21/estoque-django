@@ -4,7 +4,17 @@
 
 	<div class="container">
 		<class class="page-header">
-			<h2><i class="fa fa-cube"></i> Lista de Produtos</h2>
+			<h2>
+				<i class="fa fa-cube"></i> Lista de Produtos
+				<span class="pull-right">
+					<a href="{% url 'produto:produto_add' %}">
+						<button type="button" class="btn btn-primary"> <span class="fa fa-plus"></span>
+							Adicionar
+						</button>
+					</a>
+				</span>
+			</h2>
+
 			<hr>
 		</class>
 
