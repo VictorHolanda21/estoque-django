@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% load widget_tweaks %}
 
 {% block content %}
@@ -62,8 +62,6 @@
 
 {% block js %}
 
-<script type="text/javascript">
-	$('#id_importado').removeClass('form-control');
-</script>
+<script type="text/javascript" src="{% static 'js/produto.js' %}"></script>
 
 {% endblock js %}
