@@ -87,4 +87,4 @@ Controle de estoque.
 * [Django Basic](https://github.com/rg3915/tutoriais/tree/master/django-basic)
 * [Bootstrap Template](https://getbootstrap.com/docs/4.0/getting-started/introduction/#starter-template)
 * [django-widget-tweaks](https://github.com/jazzband/django-widget-tweaks)
-
+* [Classy Class-Based Views](https://ccbv.co.uk/)
